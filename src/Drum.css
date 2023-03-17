@@ -30,6 +30,19 @@
   height: 10vh;
 }
 
+.drumPress {
+  font-size: 8vh;
+  background-color: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+   display: flex; 
+  justify-content: center;
+  border-radius: 20px;
+  height: 10vh;
+}
+
 button {
 	border: none;
 	padding: 0;
@@ -45,7 +58,10 @@ button {
   width: 6vh;
   height: 6vh;
   border-radius: 50%;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+  border-bottom: #76eaff 4px solid;
+  border-left: #76eaff 2px solid;
+  border-right: #76eaff 2px solid;
+  border-top: #76eaff 2px solid;
   background-color: white;
   transition: all .1s ease-out;
   position: absolute;
@@ -53,8 +69,33 @@ button {
 }
 
 .buttonClass:active {
-  transform: scale(.8);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-bottom: #76eaff 2px solid;
+  border-left: #76eaff 2px solid;
+  border-right: #76eaff 2px solid;
+  border-top: #76eaff 2px solid;
+  margin-top: 3px;
+}
+
+.offClass {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  border-bottom: rgb(231, 67, 67) 4px solid;
+  border-left: rgb(231, 67, 67) 2px solid;
+  border-right: rgb(231, 67, 67) 2px solid;
+  border-top: rgb(231, 67, 67) 2px solid;
+  background-color: white;
+  transition: all .1s ease-out;
+  position: absolute;
+  top: 40vh;
+}
+
+.offClass:active {
+  border-bottom: rgb(231, 67, 67) 2px solid;
+  border-left: rgb(231, 67, 67) 2px solid;
+  border-right: rgb(231, 67, 67) 2px solid;
+  border-top: rgb(231, 67, 67) 2px solid;
+  margin-top: 3px;
 }
 
 .power {
@@ -65,6 +106,17 @@ button {
 }
 
 .power:active {
+  color: grey;
+}
+
+.poweroff {
+  color: rgb(231, 67, 67);
+  width: 3vh;
+  height: 3vh;
+  transition: all .1s ease-out;
+}
+
+.poweroff:active {
   color: grey;
 }
 
@@ -135,7 +187,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .marker:after {
   content: '';
-  width: 1px;
+  width: 2px;
   height: 8px;
   background: grey;
   position: absolute;
@@ -150,7 +202,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .marker-25{
-  left: 25%;
+  left: 27%;
 }
 
 .marker-50{
@@ -158,10 +210,23 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .marker-75{
-  left: 75%;
+  left: 73%;
 }
 
 .marker-100{
   right: 4%;
   transform: translateX(50%);
+}
+
+.volmark {
+  position: absolute;
+  left: 6%;
+  top: -7vh;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+  background-color: white;
+  width: 210px;
+  height: 50px;
+  text-align: center;
+  padding: 13px 0;
+  border: 3px solid #76eaff;
 }

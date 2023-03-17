@@ -69,10 +69,10 @@ button {
 }
 
 .buttonClass:active {
-  border-bottom: #76eaff 2px solid;
-  border-left: #76eaff 2px solid;
-  border-right: #76eaff 2px solid;
-  border-top: #76eaff 2px solid;
+  border-bottom: grey 2px solid;
+  border-left: grey 2px solid;
+  border-right: grey 2px solid;
+  border-top: grey 2px solid;
   margin-top: 3px;
 }
 
@@ -91,10 +91,10 @@ button {
 }
 
 .offClass:active {
-  border-bottom: rgb(231, 67, 67) 2px solid;
-  border-left: rgb(231, 67, 67) 2px solid;
-  border-right: rgb(231, 67, 67) 2px solid;
-  border-top: rgb(231, 67, 67) 2px solid;
+  border-bottom: grey 2px solid;
+  border-left: grey 2px solid;
+  border-right: grey 2px solid;
+  border-top: grey 2px solid;
   margin-top: 3px;
 }
 

@@ -7,28 +7,45 @@ export default function Drum() {
 
   const[toggle, setToggle] = useState(true);
   const[vol, setVol] = useState(1);
+  const[disp, setDisplay] = useState("");
   
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       if (e.key == "q" || e.key == "w" || e.key == "e" || e.key == "a" || e.key == "s" || e.key == "d" || e.key == "z" || e.key == "x" || e.key == "c") {
-        willPress(e);
-        playSound(e);
+        willPress(e.key);
+        playSound(e.key);
       }
     })
     return () => {
       document.removeEventListener("keydown", (e) => {
         if (e.key == "q" || e.key == "w" || e.key == "e" || e.key == "a" || e.key == "s" || e.key == "d" || e.key == "z" || e.key == "x" || e.key == "c") {
-          willPress(e);
-          playSound(e);
-
+          willPress(e.key);
+          playSound(e.key);
         }
       });
     };
   }, []);
 
+  useEffect(() => {
+    [...document.querySelectorAll('.drum-pad')].forEach((item) => {
+      item.addEventListener('click', (e) => {
+        willPress(e.target.firstChild.id);
+        playSound(e.target.firstChild.id);
+      });
+    });
+    return () => {
+      [...document.querySelectorAll('.drum-pad')].forEach((item) => {
+        item.removeEventListener('click', (e) => {
+          willPress(e.target.firstChild.id);
+          playSound(e.target.firstChild.id);
+        });
+      });
+    };
+  });
+
   const playSound = (event) => {
-    const audio = document.getElementById(event.key.toUpperCase());
-    document.getElementById("display").innerHTML = audio.parentElement.id;
+    const audio = document.getElementById(event.toUpperCase());
+    setDisplay(audio.parentElement.id);
     const loudness = document.getElementById("volume").value;
     audio.volume = loudness;
     audio.currentTime = 0;
@@ -45,9 +62,9 @@ export default function Drum() {
   }
 
   const willPress = (event) => {
-    document.getElementById(event.key.toUpperCase()).parentElement.className = "drumPress";
+    document.getElementById(event.toUpperCase()).parentElement.className = "drumPress";
     setTimeout(() => {
-      document.getElementById(event.key.toUpperCase()).parentElement.className = "drum-pad";
+      document.getElementById(event.toUpperCase()).parentElement.className = "drum-pad";
     }, 100);
   }
 
@@ -98,7 +115,7 @@ export default function Drum() {
         <div className="slider">
           <div className="rangeWrapper">
             <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" defaultValue={vol} onChange={e => { setVol(e.target.value)
-            document.getElementById("display").innerHTML = "Volume: " + Math.floor(e.target.value * 100)}
+            setDisplay("Volume: " + Math.floor(e.target.value * 100))}
             }/>
             <div className="marker marker-0">0</div>
             <div className="marker marker-25">25</div>
@@ -106,7 +123,7 @@ export default function Drum() {
             <div className="marker marker-75">75</div>
             <div className="marker marker-100">100</div>
           </div>
-           <label id="display" className="volmark" htmlFor="volume"></label>
+           <label id="display" className="volmark" htmlFor="volume">{disp}</label>
         </div>
       </div>
     </div>

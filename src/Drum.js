@@ -70,7 +70,7 @@ export default function Drum() {
 
   return (
     <div className="drumwrapper">
-      <div className="drumset">
+      <div id="drum-machine" className="drumset">
         <div className="drum-pad" id="Heater 1">
           <audio id="Q" className="sound" src={`${toggle ? "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" : ""}`}></audio>
           Q

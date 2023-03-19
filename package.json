@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-fcctest": "^2.0.3",
     "react-icons": "^4.8.0"
   },
   "scripts": {

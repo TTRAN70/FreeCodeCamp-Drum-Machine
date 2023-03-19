@@ -30,11 +30,16 @@
   height: 10vh;
   cursor: pointer;
   user-select: none;
+  transition: all 100ms ease-in;
+}
+
+.drum-pad:hover {
+  background-color: #76eaff;
 }
 
 .drumPress {
   font-size: 8vh;
-  background-color: #e5e5e5;
+  background-color: #76eaff;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
           box-shadow: inset 0px 0px 5px #c1c1c1;

@@ -21,7 +21,7 @@
 }
 
 .drum-pad {
-  font-size: 8vh;
+  font-size: 6vh;
   background-color: white;
   display: flex; 
   justify-content: center;
@@ -31,6 +31,8 @@
   cursor: pointer;
   user-select: none;
   transition: all 100ms ease-in;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-top: 23px;
 }
 
 .drum-pad:hover {
@@ -38,7 +40,7 @@
 }
 
 .drumPress {
-  font-size: 8vh;
+  font-size: 6vh;
   background-color: #76eaff;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
@@ -50,6 +52,8 @@
   height: 10vh;
   cursor: pointer;
   user-select: none;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-top: 23px;
 }
 
 button {
@@ -193,6 +197,7 @@ input[type="range"]::-webkit-slider-thumb {
   letter-spacing: 0.05em;
   transform: translateX(-50%);
   z-index: 1;
+  font-family: 'Josefin Sans', sans-serif;
 }
 .marker:after {
   content: '';
@@ -238,4 +243,6 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
   padding: 13px 0;
   border: 3px solid #76eaff;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-top: 15px;
 }

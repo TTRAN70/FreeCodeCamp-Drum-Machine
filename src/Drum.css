@@ -246,3 +246,24 @@ input[type="range"]::-webkit-slider-thumb {
   font-family: 'Josefin Sans', sans-serif;
   padding-top: 15px;
 }
+
+@media (max-width: 600px) {
+  .buttonClass, .offClass {
+    width: 4vh;
+    height: 4vh;
+    top: 43vh;
+  }
+  .power, .poweroff {
+    width: 2vh;
+    height: 2vh;
+  }
+  input[type="range"] {
+    width: 10rem;
+  }
+  .volmark {
+    width: 150px;
+  }
+  .drumset {
+    margin-left: 30px;
+  }
+}
